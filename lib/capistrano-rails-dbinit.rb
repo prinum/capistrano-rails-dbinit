@@ -4,7 +4,7 @@ Capistrano::Configuration.instance.load do
   namespace :deploy do
     namespace :db do
       def run_rake(task)
-        run "cd #{release_path} && bundle exec rake #{task} RAILS_ENV=#{rails_env}"
+        run "cd #{current_path} && bundle exec rake #{task} RAILS_ENV=#{rails_env}"
       end
 
       desc "Create Database"
